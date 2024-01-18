@@ -1,7 +1,7 @@
 version: "3"
 services:
   #CONTAINER RODANDO O PROJETO
-  app:
+  site:
     image: nginx:stable-alpine
     ports:
       - 80:80
@@ -9,7 +9,7 @@ services:
       - .:/usr/share/nginx/html
 
   #CONTAINER PARA PREPARAR O TESTE
-  selenium-chrome:
+  selenium:
     image: selenium/standalone-chrome
     shm_size: 2gb
     ports:
@@ -19,7 +19,7 @@ services:
   testes:
     build: .
     depends_on:
-      app:
+      site:
         condition: service_started
-      selenium-chrome:
+      selenium:
         condition: service_started

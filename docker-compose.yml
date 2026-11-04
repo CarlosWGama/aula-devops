@@ -1,0 +1,31 @@
+version: "3"
+services:
+  #CONTAINER RODANDO O PROJETO
+  site:
+    image: nginx:stable-alpine
+    ports:
+      - 80:80
+    volumes:
+      - .:/usr/share/nginx/html
+
+  #CONTAINER PARA PREPARAR O TESTE
+  selenium:
+    image: selenium/standalone-chrome
+    shm_size: 2gb
+    ports:
+      - 4444:4444
+      - 7900:7900
+    healthcheck: #Como o Selenium pode demorar um pouco para iniciar, isso checa se ele já está pronto para uso
+      test: ["CMD", "curl", "-f", "http://localhost:4444/wd/hub/status"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+  #CONTAINER DE TESTES
+  testes:
+    build: .
+    depends_on:
+      site:
+        condition: service_started #Espera o serviço ter sido criado
+      selenium:
+        condition: service_healthy #Espera o serviço ter sido criado e 100% disponível

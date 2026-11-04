@@ -2,29 +2,30 @@
   "name": "aula-devops",
   "version": "1.0.0",
   "description": "Material de apoio para aula de DevOps",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosWGama/aula-devops.git"
+  },
   "keywords": [
     "devops",
     "teste",
     "docker",
     "git"
   ],
-  "homepage": "https://github.com/CarlosWGama/aula-devops#readme",
+  "author": "Carlos W. Gama",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CarlosWGama/aula-devops/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CarlosWGama/aula-devops.git"
-  },
-  "license": "MIT",
-  "author": "Carlos W. Gama",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
+  "homepage": "https://github.com/CarlosWGama/aula-devops#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.16.0"
   },
   "devDependencies": {
-    "jest": "^30.5.2",
-    "selenium-webdriver": "^4.51.0"
+    "jest": "^29.7.0"
   }
 }

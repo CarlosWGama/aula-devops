@@ -13,7 +13,6 @@ As tag das aulas são:
 - inicio - Material cru, sem nada ainda
 - testes - Material com integração de testes
 - docker - Material com uso de docker
-- gh-actions - Material com o uso do Github Actions
 
 
 ---------
@@ -39,12 +38,6 @@ O projeto terá rodando:
  - http://localhost:4444
 
 
----------
-### MATERIAL DO GITHUB ACTIONS
-
-O workflow de teste e publicação está disponivel em:
-
-[.github/workflow/pipeline.yml](https://github.com/CarlosWGama/aula-devops/blob/gh-actions/.github/workflows/pipeline.yml)
 
 ---------
 

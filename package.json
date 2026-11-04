@@ -1,0 +1,30 @@
+{
+  "name": "aula-devops",
+  "version": "1.0.0",
+  "description": "Material de apoio para aula de DevOps",
+  "keywords": [
+    "devops",
+    "teste",
+    "docker",
+    "git"
+  ],
+  "homepage": "https://github.com/CarlosWGama/aula-devops#readme",
+  "bugs": {
+    "url": "https://github.com/CarlosWGama/aula-devops/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosWGama/aula-devops.git"
+  },
+  "license": "MIT",
+  "author": "Carlos W. Gama",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "selenium-webdriver": "^4.51.0"
+  }
+}

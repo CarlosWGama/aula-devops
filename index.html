@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>Página de Login</title>
+    <meta charset="utf-8" />
+    <!-- ================= CSS ================ -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #1f2933;
+        }
+        h1 {
+            color: #102a43;
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+        form {
+            width: 100%;
+            max-width: 360px;
+            background-color: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(16, 42, 67, 0.08);
+        }
+        p {
+            margin: 16px 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #334e68;
+        }
+        input {
+            width: 100%;
+            margin-top: 6px;
+            padding: 10px 12px;
+            border: 1px solid #cbd2d9;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+        input[type="submit"] {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            padding: 12px;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+        #error {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fca5a5;
+            padding: 10px 12px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- =======================  FORMULÁRIO ============================= -->
+    <h1>Bem-vindo ao meu site</h1>
+    <form action="" method="post" onsubmit="onSubmit(); return false;">
+        <p>Usuário: <input type="email" id="email" ></p>
+        <p>Senha: <input type="password" id="password" ></p>
+        <p id="error">Login ou senha incorreta</p>
+        <p><input type="submit" value="Entrar"></p>
+    </form>
+
+
+     <!-- =======================  JAVASCRIPT ============================= -->
+     <script>
+        const doLogin = (email, password) => {
+            const emails = ['teste@teste.com', 'admin@teste.com'];
+            if (emails.includes(email) && password == '123456') 
+                return true;
+            return false;
+        }
+        // ================
+        const onSubmit = () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if(doLogin(email, password)) document.location.href = 'welcome.html';
+            else  document.getElementById('error').style.display = "block";
+        }
+    </script>
+</body>
+</html>
